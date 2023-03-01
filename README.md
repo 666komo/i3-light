@@ -1,6 +1,8 @@
 # i3-light
 
 i3-gaps light config
+Everything is coming form andrewzn69 outdated breaf-i3 repo...
+
 
 # Example screenshot
 
