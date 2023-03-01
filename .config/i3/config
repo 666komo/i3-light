@@ -183,22 +183,37 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# -------------------- suspend shortcut ------------------------
-bindsym $mod+Shift+s exec ~/.config/custom/suspend.sh
-
 # ----------------- Window borders & gaps ------------------
 for_window [class="^.*"] border pixel 0
 gaps inner 8
 gaps outer 0
 
+# color defines for zenburn styled i3
+set $bg     #2c2c2e
+set $fg     #9f9f9f
+set $hi     #efef8f
+set $ac     #a0afa0
+set $tx     #040404
+set $ia     #8f8f8f
+set $be     #8faf9f
+set $yw     #ccdc90
+set $gn     #88b090
+set $rd     #e89393
+set $black  #000000
+set $gray   #424949 
+
+# set some nice colors      border     background  text
+client.focused              $gray         $gray         $gray
+client.unfocused            $black        $black         $black
+client.focused_inactive     $black        $black        $black
+client.urgent               $gray         $gray         $gray
+
 # -------------------- Custom executing --------------------
 bindsym Print exec --no-startup-id flameshot gui
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # ------------------------ AUTOEXEC ------------------------
 exec --no-startup-id .config/i3/arandrdef.sh
 exec_always --no-startup-id setxkbmap -layout cz
-exec_always --no-startup-id feh --bg-fill ~/whitewall.png
+exec_always --no-startup-id feh --bg-fill ~/whitewall.jpg
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom
